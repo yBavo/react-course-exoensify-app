@@ -4,6 +4,7 @@ import { Provider } from 'react-redux'
 import App from './container/App';
 import configureStore from './store/store';
 import * as serviceWorker from './serviceWorker';
+import './firebase/firebase';
 
 const store = configureStore();
 
