@@ -8,11 +8,6 @@ export const REMOVE_EXPENSE = "REMOVE_EXPENSE"
 export const EDIT_EXPENSE = "EDIT_EXPENSE"
 
 /**
- * other constant
- */
-
-
-/**
  * action creators
  */
 // Add an expense
