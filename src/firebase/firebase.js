@@ -1,19 +1,50 @@
-import firebase from 'firebase'
+import * as firebase from 'firebase'
+import { FirebaseConfig } from './keys'
 
-const config = {
-  apiKey: "AIzaSyAAJAPE5c6CmPJp_kNVpbj22caoZrJa_ew",
-  authDomain: "expensify-40a8b.firebaseapp.com",
-  databaseURL: "https://expensify-40a8b.firebaseio.com",
-  projectId: "expensify-40a8b",
-  storageBucket: "expensify-40a8b.appspot.com",
-  messagingSenderId: "721337451311"
-};
+firebase.initializeApp(FirebaseConfig);
 
-firebase.initializeApp(config);
+const database = firebase.database();
 
-firebase.database().ref().set({
-  name: 'Bavotor2'
-});
+export { firebase, database as default }; 
+
+
+// database.ref('expenses').push({
+//   description: 'Vacations',
+//   note: '',
+//   amount: 5000.00,
+//   createdAt: 5000064553684
+// })
+
+// database.ref('expenses')
+//   .on('value', (snapshot) => {
+//     const expenses = [];
+//     snapshot.forEach((data) => {
+//       expenses.push({
+//         id: data.key,
+//         ...data.val()
+//       })
+//     })
+//     console.log('[Firebase]', expenses)
+//   })
+
+
+
+// const onValueChange = database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.companie}`);
+// }, (e) => {
+//   console.log('Error', e);
+// });
+
+// database.ref()
+//   .once('value')
+//   .then((snapshot) => {
+//     const val = snapshot.val();
+//     console.log(val)
+//   })
+//   .catch((e) => {
+//     console.log('Error!', e)
+//   })
 
 // database.ref().set({
 //   name: 'Bob Bobino',
@@ -28,5 +59,11 @@ firebase.database().ref().set({
 // }).catch((e) => {
 //   console.log('This failed.', e);
 // });
-
-//export default database
+// database.ref().update({
+//   stressLevel: 9,
+//   job: {
+//     title: 'SD',
+//     companie: 'Amazon'
+//   },
+//   'location/city': 'Seattle'
+// })
