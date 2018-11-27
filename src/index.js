@@ -8,6 +8,7 @@ import { login, logout } from './actions/auth'
 import configureStore from './store/store';
 import * as serviceWorker from './serviceWorker';
 import { firebase } from './firebase/firebase';
+import LoadingPage from './component/LoadingPage';
 
 const store = configureStore();
 
@@ -24,7 +25,7 @@ const renderApp = () => {
 	}
 }
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('root'));
+ReactDOM.render(<LoadingPage />, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
 	if (user) {
@@ -42,8 +43,6 @@ firebase.auth().onAuthStateChanged((user) => {
 		history.push('/')
 	}
 })
-
-
 
 
 // If you want your app to work offline and load faster, you can change

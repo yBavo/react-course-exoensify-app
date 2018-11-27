@@ -1,11 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
-    background: white;
+    //background: $dark-grey;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.6rem;
+    line-height: 1.6;
 }
 
 button {
@@ -16,11 +21,6 @@ button:disabled {
     cursor: default;
 }
 
-a {
-    margin-right: 10px;
-}
-
 .is-active {
     font-weight: bold;
 }
-
